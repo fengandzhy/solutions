@@ -43,7 +43,12 @@
         `currentCount = _requestCount;`
     `}`
     ```
-*   **Explanation**: Ensures that updates to `_requestCount` are thread-safe, preventing simultaneous modifications by multiple threads which could lead to inconsistent states.
+    
+* **Explanation**: Ensures that updates to `_requestCount` are thread-safe, preventing simultaneous modifications by multiple threads which could lead to inconsistent states.
+
+  ## Unified exception handling
+
+  Unified exception handling logic is implemented here. In the `CoffeeServiceImpl`, two exceptions are thrown: one for April Fool's Day with a response code of 418, and another for when the coffee supply is depleted, with a response code of 503. I have used `ExceptionMiddleware` to uniformly handle these two types of exceptions. This approach significantly enhances system maintainability and reduces coupling between modules.
 
 ### Object-Oriented Design Principles Demonstrated
 
